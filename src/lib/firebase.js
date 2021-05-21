@@ -9,10 +9,11 @@ const firebaseConfig = {
     appId: "1:391533464992:web:eb737f85d7edcb6247a8c5"
 };
 
-firebase.initializeApp(firebaseConfig); 
+firebase.initializeApp(firebaseConfig);
 export default firebase;
-export const db_todo = firebase.firestore().collection("todos");
+export const db_todo = firebase.firestore().collection("todo");
 export const db_user = firebase.firestore().collection("user");
+export const storageImage = firebase.storage().ref();
 
 export const uiConfig = {
     // Popup signin flow rather than redirect flow.
@@ -23,4 +24,7 @@ export const uiConfig = {
     signInOptions: [
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     ],
+};
+export const saveImage = (url) => {
+
 };
