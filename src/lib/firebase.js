@@ -10,4 +10,17 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig); 
-export const db = firebase.firestore().collection("todos");
+export default firebase;
+export const db_todo = firebase.firestore().collection("todos");
+export const db_user = firebase.firestore().collection("user");
+
+export const uiConfig = {
+    // Popup signin flow rather than redirect flow.
+    signInFlow: 'popup',
+    // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+    signInSuccessUrl: '/',
+    // We will display Google and Facebook as auth providers.
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    ],
+};
